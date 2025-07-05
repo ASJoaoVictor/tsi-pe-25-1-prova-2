@@ -1,8 +1,24 @@
 def q1(cidades):
-    return [] 
+    lista = []
+    for cidade in cidades:
+        if(cidades[cidade] > 100):
+            lista.append(cidade)
+    return lista 
 
 def q2(lista1, lista2):
-    return []
+    soma = 0
+    lista = []
+
+    for i in lista1:
+        if i > 0:
+            soma += i #soma ao total
+            lista.append(i) #adiciona a lista
+    for i2 in lista2:
+        if i2 > 0:
+            soma += i2
+            lista.append(i2)
+    lista.sort()
+    return soma, lista
 
 def q3(valores):
     return [],[]
