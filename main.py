@@ -1,3 +1,5 @@
+from random import randint
+
 def q1(cidades):
     lista = []
     for cidade in cidades:
@@ -19,12 +21,54 @@ def q2(lista1, lista2):
             lista.append(i2)
     lista.sort()
     return soma, lista
+def ler_valores():
+    lista = []
+    while True:
+        n = int(input("Digite um número(Digite 0 para parar): "))
+        if(n == 0):
+            break
+        lista.append(n)
+    return lista
+def q3(valores):#É a função processa_lista(lista)
+    par = []
+    impar = []
+    for valor in valores:
+        if(valor % 2 == 0):
+            par.append(valor)
+        else:
+            impar.append(valor)
+    return  par, impar
 
-def q3(valores):
-    return [],[]
+def ler_03_alturas():
+    alturas = []
+    for i in range(0, 3):
+        altura = float(input("Digite o valor da altura: "))
+        alturas.append(altura)
+    return alturas
 
-def q4(valores):
-    return []
+#Solução simples
+def q4_2(valores:list):
+    valores.sort()
+    alturas_sort = [valores[1],valores[2],valores[0]]
+        
+    return alturas_sort
+
+def q4(valores:list):
+    alturas_sort = []
+
+    maior = medio = menor = valores[0]
+    for i in range(len(valores) -1 , -1, -1):
+        for valor in valores:
+            if(valor <= menor):
+                menor = valor
+            elif(valor >= maior):
+                maior = valor
+            else:
+                medio = valor
+    alturas_sort = [medio, maior, menor]
+
+    return alturas_sort
+
 
 def main():
     # Teste as questões que você desenvolveu manualmente:
@@ -49,6 +93,13 @@ def main():
     resultado = q2(lista1, lista2)
     print("q2:", resultado)
 
+    lista =  ler_valores();
+    resultado = q3(lista)
+    print(f"q2: {resultado}")
+
+    alturas = ler_03_alturas();
+    print("q4: ", q4(alturas))
+    print("q4: ", q4_2(alturas))
 
 
 if __name__ == "__main__":
