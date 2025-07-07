@@ -50,7 +50,6 @@ def ler_03_alturas():
 def q4_2(valores:list):
     valores.sort()
     alturas_sort = [valores[1],valores[2],valores[0]]
-        
     return alturas_sort
 
 def q4(valores:list):
@@ -65,7 +64,7 @@ def q4(valores:list):
                 maior = valor
             else:
                 medio = valor
-    alturas_sort = [medio, maior, menor]
+    alturas_sort = [f"{medio:.2f}", f"{maior:.2f}", f"{menor:.2f}"]
 
     return alturas_sort
 
